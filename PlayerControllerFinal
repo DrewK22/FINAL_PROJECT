@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class animationController : MonoBehaviour
+{
+    Animator animator;
+    public Rigidbody rb;
+
+    public float sidewaysForce = 100f;
+    public float jumpForce = 100f;
+    //can change both forces as neeeded
+    private GameManager gameManager;
+    // Start is called before the first frame update
+    public void Start()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    // Update is called once per frame
+    public void Update()
+    {
+       
+        if (Input.GetKey("left"))
+        {
+            animator.SetBool("isRunning", true);
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0,  0);
+        }
+
+        if (Input.GetKey("right")) 
+        {
+            animator.SetBool("isRunning", true);
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+        }
+        if (Input.GetKeyDown(SpacebarKey()))
+        {
+            animator.SetBool("isRunning", false);
+            //trigger jump animation ex: animatior.setBool("isJumping", true);
+            rb.AddForce(jumpForce)
+            rb.AddForce(0, jumpForce,0* Time.fixedDeltaTime);
+            animatior.SetBool("isRunning",true);
+        }
+
+        if(transform.position.x < -18 ){
+            transform.position = new Vector3(-18,transform.position.y, transform.position.z);
+            //change values to match new game
+        }
+        if(transform.position.x > 18 ){
+            transform.position = new Vector3(18,transform.position.y, transform.position.z);
+            //change values to match new game
+        }
+ 
+        
+        
+       
+        
+    }
+}
