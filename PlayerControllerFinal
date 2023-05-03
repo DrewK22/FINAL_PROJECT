@@ -2,59 +2,69 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class animationController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     Animator animator;
     public Rigidbody rb;
-
+    public float gravityModifier;
     public float sidewaysForce = 100f;
+    public bool isOnGround = true;
     public float jumpForce = 100f;
     //can change both forces as neeeded
-    private GameManager gameManager;
+    //private GameManager gameManager;
     // Start is called before the first frame update
-    public void Start()
+    void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Physics.gravity *= gravityModifier;
+        //gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
-    public void Update()
+    void Update()
     {
        
         if (Input.GetKey("left"))
         {
             animator.SetBool("isRunning", true);
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0,  0);
+            rb.AddForce(0, 0, sidewaysForce * Time.fixedDeltaTime);
         }
 
         if (Input.GetKey("right")) 
         {
             animator.SetBool("isRunning", true);
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(0, 0, -sidewaysForce * Time.fixedDeltaTime);
         }
-        if (Input.GetKeyDown(SpacebarKey()))
+        if (Input.GetKey("space")&& isOnGround)
         {
-            animator.SetBool("isRunning", false);
-            //trigger jump animation ex: animatior.setBool("isJumping", true);
-            rb.AddForce(jumpForce)
-            rb.AddForce(0, jumpForce,0* Time.fixedDeltaTime);
-            animatior.SetBool("isRunning",true);
+            animator.SetBool("isJump", true);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); 
+            isOnGround = false;
+            animator.SetBool("isRunning",true);
+            
         }
+        if(transform.position.z > 17){
+            transform.position = new Vector3(transform.position.x, transform.position.y,17);
 
-        if(transform.position.x < -18 ){
-            transform.position = new Vector3(-18,transform.position.y, transform.position.z);
-            //change values to match new game
         }
-        if(transform.position.x > 18 ){
-            transform.position = new Vector3(18,transform.position.y, transform.position.z);
-            //change values to match new game
+        if(transform.position.z < -1){
+            transform.position = new Vector3(transform.position.x, transform.position.y,-1);
+
         }
- 
-        
+        //if(transform.position.y < 5){
+            //transform.position = new Vector3(transform.position.x, 5,transform.position.z);
+
+        //}
+    }
+        private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "Ground") {
+            isOnGround = true;
+        }
+    
         
        
         
-    }
+    
+}
 }
