@@ -1,0 +1,29 @@
+using UnityEngine;
+
+public class DoubleCoinsPowerup : MonoBehaviour
+{
+    public float duration = 20f;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.ActivateDoubleCoins(duration);
+            Destroy(gameObject);
+        }
+    }
+}
+
+public class TimePowerup : MonoBehaviour
+{
+    public float timeBonus = 10f;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.AddTime(timeBonus);
+            Destroy(gameObject);
+        }
+    }
+}
