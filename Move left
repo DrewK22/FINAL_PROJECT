@@ -4,17 +4,40 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
+    public float speed = 10;
+    private PlayerController palyerControllerScript;
+    private float leftBound = -80; // destroy objects
     // Start is called before the first frame update
     void Start()
     {
-        
+        palyerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
 
-    public float speed = 10;
+    
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed);
+        if(palyerControllerScript.gameOver == false)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
+
+        }
+        //Destroy obstacle 
+        if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+
+        //if(transform.position.x > 20){
+          //  transform.position = new Vector3(17, transform.position.y,transform.position.z);
+
+        //}
+        //if(transform.position.x < -1){
+          //  transform.position = new Vector3(-1, transform.position.y,transform.position.z);
+
+        //}
+        
+
     }
 }
