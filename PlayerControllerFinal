@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     Animator animator;
     public Rigidbody rb;
+    public ParticleSystem explosion;
     public float gravityModifier;
     public float sidewaysForce = 100f;
     public bool isOnGround = true;
     public float jumpForce = 100f;
+    public bool gameOver = false;
     //can change both forces as neeeded
     //private GameManager gameManager;
     // Start is called before the first frame update
@@ -57,14 +59,19 @@ public class PlayerController : MonoBehaviour
 
         //}
     }
-        private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Ground") {
+        private void OnCollisionEnter(Collision collision) 
+        {
+            if (collision.gameObject.tag == "Ground") 
+            {
             isOnGround = true;
+            }
+            else if (collision.gameObject.CompareTag("Obstacle"))
+            {
+                gameOver = true;
+                Debug.Log("Game Over!");
+                gameOver= true;
+                explosion.Play();
+            
+            }
         }
-    
-        
-       
-        
-    
-}
 }
