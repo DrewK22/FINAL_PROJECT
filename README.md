@@ -3,11 +3,11 @@ COSC 332
 **Unity 3D Game - README**
 **Introduction**
 
-****Name of Game**: Run For life**
+****Name of Game: Run For life**
 
-**Owner Of Game:** The Challanger
+**Owner Of Game:The Challangers **
 
-**Honesty Statement: This game was created by ## as a personal project.**
+**Honesty Statement: This game was created by the challangers as a group project.**
 
 Welcome to our 3D Unity game called Platformer.This game is a simple action game created by the challanges where the player moves through a 3D environment, collecting coins and power-ups while avoiding Obstacles. The game features simple controls and is designed to be easy to pick up and play.
 **Version of unity**
@@ -24,16 +24,15 @@ The game can be played with the following controls:
 Space Bar and Arrow Keys: Move the player character to move left or right with the arror keys and jump with the space bar
 
 **Gameplay**
-The objective of the game is to collect as many coins as possible within a certain amount of time while avoiding obstacles. Each coin collected adds points to the player's scores.
+The objective of the game is to collect a certain amount of coins within a certain amount of time while avoiding obstacles. Each coin collected adds points to the player's scores.
+  **Power-ups:** They can be collected to gain a temporary advantage:
 
-**Power-ups** They can be collected to gain a temporary advantage:
+  **Coin Powerups:** Doubles the value of all coins collected for 10 seconds.
+  time powerups: adds time to the alllocated time.
 
-Coin Powerups: Doubles the value of all coins collected for 10 seconds.
-time powerups: adds time to the alllocated time.
-
-**Difficulty**
-The game has three difficulties: Easy, Meduim and  hard 
-The meduim has more obstacles, and less powerups are spawned and the player has lesser time than the easy level while in the hard level the player has more obstacles, less powerups are spawned and the player has lesser time making it more difficult than the easy and meduim levels
+  **Difficulty**
+   The game has three difficulties: Easy, Meduim and  hard 
+   The easy difficulty has obstacles, and powerups are spawned and the player is expected to pick up 10 coins within 180secs while the meduim defficulty has more obstacles, and less powerups are spawned and the player is expected to pick up 20 coins within 90secs  while in the hard level the player has more obstacles, less powerups are spawned than the easy and meduim difficulties, the player has 45secs to pickup 30 coins
 
 The game is over when the score is displayed when ever the player runs out of time ore hits the an obstacle, The player can restart the game by clicking on the restart buttot or choose to quit.
 **Development**
@@ -53,7 +52,7 @@ The game's main menu is the first screen the player sees when starting the game.
 The in-game UI displays important information to the player during gameplay. It includes the following elements:
 
 **Score**: Displays the player's current score.
-**time**: Displays the player's remaining lives.
+**timer**: Displays the player's time limit.
 **Poerups** : The powerup is displayed when the player collides with a powerup
 **Credits** : This shows the names of the game creators 
 **Help** This button is to show the player how to play the game,
