@@ -33,7 +33,7 @@ The objective of the game is to collect a certain amount of coins within a certa
 
   **Difficulty**
    The game has three difficulties: Easy, Meduim and hard 
-   The easy difficulty has obstacles, and powerups are spawned and the player is expected to pick up 10 coins within 180secs while the meduim difficulty has more obstacles, and less powerups are spawned and the player is expected to pick up 15 coins within 90secs  while in the hard level the player has more obstacles, less powerups are spawned than the easy and meduim difficulties, the player has 45secs to pickup 20 coins
+   The easy difficulty has obstacles, and powerups are spawned and the player is expected to pick up 10 coins within 120secs while the meduim difficulty has more obstacles, and less powerups are spawned and the player is expected to pick up 15 coins within 60secs  while in the hard level the player has more obstacles, less powerups are spawned than the easy and meduim difficulties, the player has 30 secs to pickup 20 coins
 
 The game is over when the score is displayed when ever the player runs out of time ore hits the an obstacle, The player can restart the game by clicking on the restart buttot or choose to quit.
 **Development**
