@@ -19,6 +19,7 @@ Open Unity and choose "Open Project".
 
 
 Press the "Play" button in the Unity Editor to start the game.
+
 **Controls**
 The game can be played with the following controls:
 Space Bar and Arrow Keys: Move the player character to move left or right with the arror keys and jump with the space bar
@@ -27,12 +28,12 @@ Space Bar and Arrow Keys: Move the player character to move left or right with t
 The objective of the game is to collect a certain amount of coins within a certain amount of time while avoiding obstacles. Each coin collected adds points to the player's scores.
   **Power-ups:** They can be collected to gain a temporary advantage:
 
-  **Coin Powerups:** Doubles the value of all coins collected for 10 seconds.
-  time powerups: adds time to the alllocated time.
+  **Coin Powerups:** Adds a value of 1 to the coins every time the powerup is collected.
+  **Time powerups:** adds 20 seconds to the alllocated time.
 
   **Difficulty**
-   The game has three difficulties: Easy, Meduim and  hard 
-   The easy difficulty has obstacles, and powerups are spawned and the player is expected to pick up 10 coins within 180secs while the meduim defficulty has more obstacles, and less powerups are spawned and the player is expected to pick up 20 coins within 90secs  while in the hard level the player has more obstacles, less powerups are spawned than the easy and meduim difficulties, the player has 45secs to pickup 30 coins
+   The game has three difficulties: Easy, Meduim and hard 
+   The easy difficulty has obstacles, and powerups are spawned and the player is expected to pick up 10 coins within 180secs while the meduim difficulty has more obstacles, and less powerups are spawned and the player is expected to pick up 15 coins within 90secs  while in the hard level the player has more obstacles, less powerups are spawned than the easy and meduim difficulties, the player has 45secs to pickup 20 coins
 
 The game is over when the score is displayed when ever the player runs out of time ore hits the an obstacle, The player can restart the game by clicking on the restart buttot or choose to quit.
 **Development**
